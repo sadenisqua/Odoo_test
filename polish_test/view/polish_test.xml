@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="polish_test_view_form" model="ir.ui.view">
+        <field name="name">polish.test.form</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <form string="Account Type">
+                <group>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="abool"/>
+                    <field name="atext"/>
+                    <field name="anhtml"/>
+                    <field name="afloat"/>
+                    <field name="adate"/>
+                    <field name="adatetime"/>
+                    <field name="abin"/>
+                    <field name="aselection"/>
+                    <field name="aref"/>
+                    <field name="arel_id"/>
+                    <field name="arel_ids"/>
+                    <field name="arels_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="polish_test_view_tree" model="ir.ui.view">
+        <field name="name">polish.test.view.tree</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="abool"/>
+                <field name="atext"/>
+                <field name="anhtml"/>
+                <field name="afloat"/>
+                <field name="adate"/>
+                <field name="adatetime"/>
+                <field name="abin"/>
+                <field name="aselection"/>
+                <field name="aref"/>
+                <field name="arel_id"/>
+                <field name="arel_ids"/>
+                <field name="arels_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="polish_test_view_calendar" model="ir.ui.view">
+        <field name="name">polish.test.view.calendar</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <calendar string="Ideas" date_start="adate" color="name">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+        <record id="polish_test_view_kanban" model="ir.ui.view">
+        <field name="name">polish.test.view.kanban</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div claa="kanban.polish.test">
+                            <field name="name"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="polish_test_action" model="ir.actions.act_window">
+        <field name="name">polish test action</field>
+        <field name="res_model">polish.test</field>
+        <field name="view_mode">tree,form,calendar,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+    <menuitem name="Polish Test"
+              id="polish_test_root"
+              sequence="10"/>
+    <menuitem name="Sm1"
+              id="polish_test_sm1_root"
+              parent="polish_test_root"
+              sequence="10"/>
+    <menuitem id="sm1"
+              name="Sm1"
+              parent="polish_test_sm1_root"
+              action="polish_test_action"
+              sequence="10"/>
+</odoo>

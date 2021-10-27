@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sestra_polish_test_wizzard_view_form" model="ir.ui.view">
+        <field name="name">sestra.polish.test.wizzard.view.form</field>
+        <field name="model">sestra.polish.test.wizzard</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="create_contact" string="Create contact" type="object"/>
+                </header>
+                <field name="selection_type"/>
+                <field name="name"/>
+                <field name="wizzard_text"/>
+            </form>
+        </field>
+    </record>
+    <record id="sestra_polish_test_wizzard" model="ir.actions.act_window">
+        <field name="name">Sestra Polish Test Wizzard</field>
+        <field name="res_model">sestra.polish.test.wizzard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

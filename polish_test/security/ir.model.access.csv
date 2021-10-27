@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_polish_test,access_polish_test,model_polish_test,base.group_user,1,1,1,1
+access_brat_polish_test,access_brat_polish_test,model_brat_polish_test,base.group_user,1,1,1,1
+access_sestra_polish_test,access_sestra_polish_test,model_sestra_polish_test,base.group_user,1,1,1,1
+access_sestra_polish_test_wizzard,access_sestra_polish_test_wizzard,model_sestra_polish_test_wizzard,base.group_user,1,1,1,1

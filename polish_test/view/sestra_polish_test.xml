@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="sestra_polish_test_view_form" model="ir.ui.view">
+        <field name="name">sestra.polish.test.form</field>
+        <field name="model">sestra.polish.test</field>
+        <field name="arch" type="xml">
+            <form string="Account Type">
+                <header>
+                    <button name="wizzard_start" string="Create text" type="object"/>
+                </header>
+                <group>
+                    <field name="text"/>
+                    <field name="check1"/>
+                    <field name="check2"/>
+                    <field name="check_all"/>
+                    <field name="select1"  attrs="{'invisible': [('id','=',False)]}"/>
+                    <field name="select2" attrs="{'invisible': [('id','=',False)]}"/>
+                    <field name="boolean1" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'a'), ('select2', '!=', 'd')]}"/>
+                    <field name="boolean2" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'a'), ('select2', '!=', 'f')]}"/>
+                    <field name="boolean3" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'a'), ('select2', '!=', 'g')]}"/>
+                    <field name="boolean4" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'b'), ('select2', '!=', 'd')]}"/>
+                    <field name="boolean5" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'b'), ('select2', '!=', 'f')]}"/>
+                    <field name="boolean6" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'b'), ('select2', '!=', 'g')]}"/>
+                    <field name="boolean7" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'c'), ('select2', '!=', 'd')]}"/>
+                    <field name="boolean8" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'c'), ('select2', '!=', 'f')]}"/>
+                    <field name="boolean9" attrs="{'invisible':[ '&amp;', ('select1', '!=', 'c'), ('select2', '!=', 'g')]}"/>
+                    <field name="partner_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+<!--    <record id="sestra_polish_test_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">sestra.polish.test.view.tree</field>-->
+<!--        <field name="name">sestra.polish.test</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="text"/>-->
+<!--                <field name="check1"/>-->
+<!--                <field name="check2"/>-->
+<!--                <field name="check_all"/>-->
+<!--                <field name="select1"/>-->
+<!--                <field name="select2"/>-->
+<!--                <field name="boolean1"/>-->
+<!--                <field name="boolean2"/>-->
+<!--                <field name="boolean3"/>-->
+<!--                <field name="boolean4"/>-->
+<!--                <field name="boolean5"/>-->
+<!--                <field name="boolean6"/>-->
+<!--                <field name="boolean7"/>-->
+<!--                <field name="boolean8"/>-->
+<!--                <field name="boolean9"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="sestra_polish_test_action" model="ir.actions.act_window">
+        <field name="name">sesta polish test action</field>
+        <field name="res_model">sestra.polish.test</field>
+        <field name="view_mode">form,tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                First string
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Sestra Polish Test"
+              id="sestra_polish_test_root"
+              action="sestra_polish_test_action"
+              sequence="10"/>
+<!--    <menuitem name="Sm2"-->
+<!--              id="sestra_polish_test_sm2_root"-->
+<!--              parent="sestra_polish_test_root"-->
+<!--              sequence="10"/>-->
+<!--    <menuitem id="sm2"-->
+<!--              name="Sm2"-->
+<!--              parent="sestra_polish_test_root"-->
+<!--              action="sestra_polish_test_action"-->
+<!--              sequence="10"/>-->
+</odoo>

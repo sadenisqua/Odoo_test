@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="brat_polish_test_view_form" model="ir.ui.view">
+        <field name="name">brat.polish.test.form</field>
+        <field name="model">brat.polish.test</field>
+        <field name="arch" type="xml">
+            <form string="Account Type">
+                <group>
+                    <field name="name"/>
+                        </group>
+            </form>
+        </field>
+    </record>
+    <record id="polish_test_view_tree" model="ir.ui.view">
+        <field name="name">polish.test.view.tree</field>
+        <field name="model">polish.test</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                </tree>
+        </field>
+    </record>
+        <record id="brat_polish_test_action" model="ir.actions.act_window">
+        <field name="name">brat polish test action</field>
+        <field name="res_model">brat.polish.test</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+    <menuitem name="Brat Polish Test"
+              id="brat_polish_test_root"
+              sequence="10"/>
+    <menuitem name="Brat Sm1"
+              id="brat_polish_test_sm1_root"
+              parent="brat_polish_test_root"
+              sequence="10"/>
+    <menuitem id="brat_sm1"
+              name="brat_Sm1"
+              parent="brat_polish_test_sm1_root"
+              action="brat_polish_test_action"
+              sequence="10"/>
+</odoo>
