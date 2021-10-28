@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="songs_view_form" model="ir.ui.view">
+        <field name="name">songs.view.form</field>
+        <field name="model">songs</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="create_file_xml" string="Create with xml" type="object"/>
+                </header>
+                <group>
+                    <field name="name"/>
+                    <field name="duration"/>
+                    <field name="listeners"/>
+                    <field name="author"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="songs_view_tree" model="ir.ui.view">
+        <field name="name">songs.view.tree</field>
+        <field name="model">songs</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="duration"/>
+                <field name="listeners"/>
+                <field name="author"/>
+            </tree>
+        </field>
+    </record>
+    <record id="songs_view_kanban" model="ir.ui.view">
+        <field name="name">songs.view.kanban</field>
+        <field name="model">songs</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="kanban.songs">
+                            <field name="name"/>
+                            <field name="duration"/>
+                            <field name="listeners"/>
+                            <field name="author"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="songs_action" model="ir.actions.act_window">
+        <field name="name">Songs</field>
+        <field name="res_model">songs</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+            </p>
+        </field>
+    </record>
+    <menuitem name="Songs"
+              parent="artists_root"
+              id="songs_root"
+              action="songs_action"
+              sequence="10"/>
+</odoo>
