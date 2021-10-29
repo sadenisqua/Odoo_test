@@ -6,11 +6,10 @@ class Artists(models.Model):
     _description = 'Artists'
 
     name = fields.Char(string='Artist')
-    month_listeners = fields.Integer(string='Month listeners')
-    age = fields.Integer(string='Age')
+    month_listeners = fields.Text(string='Month listeners')
+    age = fields.Text(string='Age')
     sex = fields.Char(string='Sex')
     country = fields.Char(string='Country')
-    songs = fields.One2many('songs', 'author')
-
-    def create_file_xml(self):
-        return True
+    songs = fields.Many2many('songs')
+    groups = fields.Many2many('groups')
+    albums_and_singles = fields.Many2many('albums.singles')

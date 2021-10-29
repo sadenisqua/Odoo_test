@@ -5,7 +5,9 @@
     'data': [
         'view/artists.xml',
         'view/songs.xml',
-        'view/groups.xml'
+        'view/groups.xml',
+        'view/parser_xml.xml',
+        'view/albums_singles.xml'
     ],
     'installable': True,
     'application': True,

@@ -5,14 +5,12 @@
         <field name="model">songs</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button name="create_file_xml" string="Create with xml" type="object"/>
-                </header>
                 <group>
                     <field name="name"/>
                     <field name="duration"/>
                     <field name="listeners"/>
                     <field name="author"/>
+                    <field name="albums_and_singles"/>
                 </group>
             </form>
         </field>
@@ -26,6 +24,7 @@
                 <field name="duration"/>
                 <field name="listeners"/>
                 <field name="author"/>
+                <field name="albums_and_singles"/>
             </tree>
         </field>
     </record>
@@ -41,6 +40,7 @@
                             <field name="duration"/>
                             <field name="listeners"/>
                             <field name="author"/>
+                            <field name="albums_and_singles"/>
                         </div>
                     </t>
                 </templates>

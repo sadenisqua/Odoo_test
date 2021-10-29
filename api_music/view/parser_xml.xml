@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="parser_view_form" model="ir.ui.view">
+        <field name="name">parser.view.form</field>
+        <field name="model">parser</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="xml_updater"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="parser_action" model="ir.actions.act_window">
+        <field name="name">parser</field>
+        <field name="res_model">parser</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+            </p>
+        </field>
+    </record>
+    <menuitem name="Update"
+              parent="artists_root"
+              id="parser_root"
+              action="parser_action"
+              sequence="10"/>
+</odoo>

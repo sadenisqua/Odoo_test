@@ -6,9 +6,7 @@ class Groups(models.Model):
     _description = 'Groups'
 
     name = fields.Char(string='Name')
-    month_listeners = fields.Integer(string='Month listeners')
-    songs = fields.One2many('songs', 'author')
-    artists = fields.One2many('artists', 'name')
-
-    def create_file_xml(self):
-        return True
+    month_listeners = fields.Text(string='Month listeners')
+    songs = fields.Many2many('songs')
+    artists = fields.Many2many('artists')
+    albums_and_singles = fields.Many2many('albums.singles')

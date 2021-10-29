@@ -1,12 +1,16 @@
-# import xmltodict
-#
-# from odoo import models, fields, api
-#
-#
-# class ParserXml(models.Model):
-#     _name = "api.music"
-#     _description = "Parser Xml"
-#
+import xmltodict
+
+from odoo import models, fields, api
+
+
+class ParserXml(models.Model):
+    _name = "parser"
+    _description = "Parser Xml"
+
+    xml_updater = fields.Binary(string='XML UPDATER')
+
+    def parse_xml(self):
+        return True
 #     @staticmethod
 #     def get_names():
 #
