@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="upload_file_view_form" model="ir.ui.view">
+        <field name="name">upload.file.view.form</field>
+        <field name="model">upload.file</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="wizzard_start" string="Upload" type="object"/>
+                </header>
+                <group>
+                    <field name="xml_updater" filename="xml_updater_name"/>
+                    <field name="xml_updater_name" invisible="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="upload_file_action" model="ir.actions.act_window">
+        <field name="name">upload file action</field>
+        <field name="res_model">upload.file</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+
+            </p>
+        </field>
+    </record>
+    <menuitem name="Update"
+              parent="artists_root"
+              id="upload_file_root"
+              action="upload_file_action"
+              sequence="10"/>
+</odoo>

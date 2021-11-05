@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="upload_file_wizzard_view_form" model="ir.ui.view">
+        <field name="name">upload.file.wizzard.view.form</field>
+        <field name="model">upload.file.wizzard</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="upload_file_xml" string="Upload" type="object"/>
+                </header>
+                <field name="import_xml" filename="import_xml_name"/>
+                <field name="import_xml_name" invisible="1"/>
+            </form>
+        </field>
+    </record>
+    <record id="upload_file_wizzard" model="ir.actions.act_window">
+        <field name="name">Upload File Wizzard</field>
+        <field name="res_model">upload.file.wizzard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
