@@ -1,12 +1,9 @@
-from xml.etree import ElementTree as ET
+import json
 
+import xmltodict
 
-def parseXML(xmlFile):
-    """
-    Parse the xml
-    """
-    with open(xmlFile, 'r') as r:
-        xml = r.read()
+with open('/home/user/Moduli/api_music/data/api_music.xml', 'rb') as file:
+    result = xmltodict.parse(file)
+    print(json.dumps(result))
+    print(result)
 
-    xml = ET.SubElement('name')
-    print(xml)

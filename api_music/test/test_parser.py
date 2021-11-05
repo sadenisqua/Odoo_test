@@ -1,76 +1,45 @@
-import json
-
-import xmltodict
-from lxml import etree, objectify
-import xml.dom.minidom
-import xml.etree.ElementTree as ET
-import pprint as pp
-
-
-def parseXML(xmlFile):
-    """
-    Parse the xml
-    """
-    with open(xmlFile, 'r') as r:
-        read_xml = r.read()
-
-    root = objectify.fromstring(read_xml)
-
-    # возвращает атрибуты в узле элемента как dict
-    attrib = root.attrib
-
-    # как извлечь данные элемента
-    artist = root.Artists.artist
-
-    for art in root.getchildren():
-        for e in art.getchildren():
-            print(f'{e.tag} => {e.text}')
-        print()
-
-    # как изменить текст элемента
-    # root.Artists.artist = 'something else'
-    # print(root.Artists.artist)
-
-    # как добавить новый элемент
-    # root.Artists.new_element = "new data"
-
-    # удалить материал py: pytype stuff
-    # objectify.deannotate(root)
-    # etree.cleanup_namespaces(root)
-    # obj_xml = etree.tostring(root, pretty_print=True)
-    # print(obj_xml)
-
-
-# parseXML('test.xml')
-
-
-def parseXml2(fileXML):
-    fileXML = xml.dom.minidom.parse(fileXML)
-
-    print(fileXML.nodeName)
-    print(fileXML.firstChild.tagName)
-
-    name = fileXML.getElementsByTagName("name")
-    print(f"{name.length} expertise")
-    for skill in name:
-        print(skill.getAttribute("name"))
-
-
-# parseXml2('test.xml')
-
-
-
-
-def get_xml():
-    with open("/home/user/Moduli/api_music/test/test.xml", "rb") as file:
-        result = xmltodict.parse(file)
-        print(json.dumps(result))
-        artists_names = list(map(lambda artists: artists['name'], result['music']['Artists']['artist']))
-        artists_names_in_groups = []
-        for group in result['music']['Groups']['group']:
-            for artist in group['artists']['artist']:
-                artists_names_in_groups.append(artist['name'])
-        print(artists_names + artists_names_in_groups)
-
-
-get_xml()
+# group_info = {
+#     'month_listeners': values.get('month_listeners'),
+#     'name': values.get('name')
+# }
+# group_id = self.env['groups'].create(group_info)
+#
+#
+# def _get_artist(artist):
+#     artist_info = {
+#         'name': artist.get('name'),
+#         'age': artist.get('age'),
+#         'sex': artist.get('sex'),
+#         'country': artist.get('country'),
+#         'groups': [(6, 0, group_id.ids or False)]
+#     }
+#     artists_id = self.env['artists'].create(artist_info)
+#
+#     def _get_singles(single):
+#         album_or_single_info = {
+#             'album_and_single': 'single',
+#             'artists': [(6, 0, artists_id.ids or False)],
+#             'groups': [(6, 0, group_id.ids or False)]
+#         }
+#         single_id = self.env['albums.singles'].create(album_or_single_info)
+#         single_info = {
+#             'name': single.get('name'),
+#             'duration': single.get('duration'),
+#             'listeners': single.get('listeners'),
+#             'author': [(6, 0, artists_id.ids or False)],
+#             'albums_and_singles': [(4, single_id.id)],
+#             'groups': [(6, 0, group_id.ids or False)]
+#         }
+#         self.env['songs'].create(single_info)
+#
+#     try:
+#         for single in values['singles']['songs']['song']:
+#             _get_singles(single)
+#     except:
+#         pass
+#
+#
+# for artist in values['artists']['artist']:
+#     _get_artist(artist)
+#
+# return values

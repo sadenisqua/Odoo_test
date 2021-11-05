@@ -11,6 +11,7 @@
                     <field name="listeners"/>
                     <field name="author"/>
                     <field name="albums_and_singles"/>
+                    <field name="member"/>
                 </group>
             </form>
         </field>
@@ -25,6 +26,7 @@
                 <field name="listeners"/>
                 <field name="author"/>
                 <field name="albums_and_singles"/>
+                <field name="member"/>
             </tree>
         </field>
     </record>
@@ -41,6 +43,7 @@
                             <field name="listeners"/>
                             <field name="author"/>
                             <field name="albums_and_singles"/>
+                            <field name="member"/>
                         </div>
                     </t>
                 </templates>

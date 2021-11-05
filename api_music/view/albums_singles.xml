@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="album_or_single"/>
+                    <field name="album_and_single"/>
                     <field name="artists"/>
                     <field name="groups"/>
                     <field name="songs"/>
@@ -19,7 +19,7 @@
         <field name="model">albums.singles</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="album_or_single"/>
+                <field name="album_and_single"/>
                 <field name="artists"/>
                 <field name="groups"/>
                 <field name="songs"/>
@@ -34,7 +34,7 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="kanban.albums.singles">
-                            <field name="album_or_single"/>
+                            <field name="album_and_single"/>
                             <field name="artists"/>
                             <field name="groups"/>
                             <field name="songs"/>

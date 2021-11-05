@@ -3,11 +3,12 @@
     'description': 'api_music',
     'author': 'Denis',
     'data': [
+        'view/albums_singles.xml',
         'view/artists.xml',
-        'view/songs.xml',
         'view/groups.xml',
-        'view/parser_xml.xml',
-        'view/albums_singles.xml'
+        'view/songs.xml',
+        'view/upload_file.xml',
+        'wizzard/upload_file_wizzard.xml'
     ],
     'installable': True,
     'application': True,
